@@ -2,11 +2,11 @@ import { injectGlobal } from 'styled-components'
 injectGlobal`
 @font-face {
   font-family: 'iconfont';  /* project id 862448 */
-  src: url('//at.alicdn.com/t/font_862448_ic8h8c56qn.eot');
-  src: url('//at.alicdn.com/t/font_862448_ic8h8c56qn.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_862448_ic8h8c56qn.woff') format('woff'),
-    url('//at.alicdn.com/t/font_862448_ic8h8c56qn.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_862448_ic8h8c56qn.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_862448_i7ggrh1xxyg.eot');
+  src: url('//at.alicdn.com/t/font_862448_i7ggrh1xxyg.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_862448_i7ggrh1xxyg.woff') format('woff'),
+  url('//at.alicdn.com/t/font_862448_i7ggrh1xxyg.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_862448_i7ggrh1xxyg.svg#iconfont') format('svg');
 }
 .iconfont{
     font-family:"iconfont" !important;

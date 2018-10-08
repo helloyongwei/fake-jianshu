@@ -21,7 +21,7 @@ import {actionCreators } from "./store/";
 
 class Header extends Component {
   getListArea() {
-    const { focused, list, mouseIn, page, totalPage, handleInputMouseEnter, handleInputMouseLeave, handleChangeList } = this.props
+    const { focused, list, mouseIn, page, totalPage, handleInputMouseEnter, handleInputMouseLeave, handleChangePage } = this.props
     const pageList = []
 
     if (list.size) {
@@ -41,8 +41,11 @@ class Header extends Component {
           <SearchInfoTitle>
             热门搜索
             <SearchInfoSwitch
-              onClick={()=>(handleChangeList(page, totalPage))}
-            >换一批</SearchInfoSwitch>
+              onClick={()=>(handleChangePage(page, totalPage, this.spin))}
+            >
+              <i className="iconfont spin" ref={(spin)=>{this.spin = spin}}>&#xe851;</i>
+              换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchList>
             {pageList}
@@ -75,7 +78,7 @@ class Header extends Component {
               ></NavSearch>
             </CSSTransition>
             <i
-              className={focused ? 'focused iconfont' : 'iconfont'}
+              className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}
             >&#xe6a3;</i>
             {this.getListArea()}
           </SearchWrapper>
@@ -121,7 +124,14 @@ const mapDispatchToProps = (dispatch) => ({
   handleInputMouseLeave() {
     dispatch(actionCreators.mouseLeave())
   },
-  handleChangeList(page, totalPage) {
+  handleChangePage(page, totalPage, spin) {
+    let originAngle = spin.style.transform.replace(/[^0-9]/ig, "")
+    if (originAngle) {
+      originAngle = parseInt(originAngle, 10)
+    } else {
+      originAngle = 0
+    }
+    spin.style.transform = 'rotate('+(originAngle+360)+'deg)'
     dispatch(actionCreators.changePage(((page+1)%totalPage)))
   }
 })
