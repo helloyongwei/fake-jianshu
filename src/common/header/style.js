@@ -62,6 +62,47 @@ float: left;
 }
 `
 
+export const SearchInfo = styled.div`
+position: absolute;
+left: 0;
+top: 56px;
+width: 240px;
+padding: 0 20px;
+box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+`
+
+export const SearchInfoTitle = styled.div`
+margin-top: 20px;
+margin-bottom: 15px;
+line-height: 20px;
+color: #787878;
+font-size: 14px;
+`
+
+export const SearchInfoSwitch = styled.span`
+float: right;
+font-size: 13px;
+cursor: pointer;
+`
+
+export const SearchList = styled.div`
+overflow: hidden;
+`
+
+export const SearchItem = styled.a`
+display: block;
+float: left;
+padding: 0 5px;
+margin-right: 10px;
+margin-bottom: 15px;
+line-height: 20px;
+font-size: 12px;
+border: 1px solid #ddd;
+color: #969696;
+border-radius: 3px;
+cursor: pointer;
+`
+
 export const NavSearch = styled.input.attrs({
   placeholder: 'serach'
 })`
