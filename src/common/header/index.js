@@ -24,7 +24,7 @@ class Header extends Component {
     const { focused, list, mouseIn, page, totalPage, handleInputMouseEnter, handleInputMouseLeave, handleChangePage } = this.props
     const pageList = []
 
-    if (list.size) {
+    if (list.size > 0) {
       for (let i = (page-1)*10; i < page*10; i++) {
         pageList.push(
           <SearchItem key={i}>{list.get(i)}</SearchItem>
@@ -58,7 +58,7 @@ class Header extends Component {
 
   }
   render() {
-    const { focused, handleInputFocus, handleInputBlur } = this.props
+    const { focused, list, handleInputFocus, handleInputBlur } = this.props
     return (
       <HeaderWrapper>
         <Logo></Logo>
@@ -68,12 +68,12 @@ class Header extends Component {
           <SearchWrapper>
             <CSSTransition
               timeout={200}
-              in={this.props.focused}
+              in={focused}
               classNames="slide"
             >
               <NavSearch
                 className={focused ? 'focused' : ''}
-                onFocus={handleInputFocus}
+                onFocus={()=>handleInputFocus(list)}
                 onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
@@ -110,8 +110,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  handleInputFocus() {
-    dispatch(actionCreators.getList())
+  handleInputFocus(list) {
+    (list.size === 0) && dispatch(actionCreators.getList())
     dispatch(actionCreators.searchFocus())
   },
   handleInputBlur() {
