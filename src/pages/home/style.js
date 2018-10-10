@@ -98,3 +98,15 @@ height: 300px;
 line-height: 300px;
 text-align: center;
 `
+
+export const ListMore = styled.div`
+margin; 30px 0;
+height: 40px;
+line-height:40px;
+width: 100%;
+background: #a5a5a5;
+text-align: center;
+border-radius: 20px;
+color: #fff;
+cursor: pointer;
+`
