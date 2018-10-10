@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "data": {
+    "topicList": [
+      {
+        "id": 1,
+        "title": "简书电影",
+        "imgUrl": "https://upload.jianshu.io/collections/images/21/20120316041115481.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+      },
+      {
+        "id": 2,
+        "title": "手绘",
+        "imgUrl": "//upload.jianshu.io/collections/images/283250/%E6%BC%AB%E7%94%BB%E4%B8%93%E9%A2%98.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/64/h/64"
+      }
+    ],
+    "articleList": [
+      {
+        "id": 1,
+        "title": "最惨的世界霸主，3000万国土仅剩50万，如今沦为欧洲二流国家！",
+        "desc": "无论在历史的哪个时期，世界上都会有一个最强的国家，成为当时的世界霸主。比如亚洲的蒙古帝国，工业革命时期的日不落帝国，冷战时期的苏联等等，个个都是...",
+        "imgUrl": "//upload-images.jianshu.io/upload_images/12631447-56d6635f9027cb62.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+      },
+      {
+        "id": 2,
+        "title": "最惨的世界霸主，3000万国土仅剩50万，如今沦为欧洲二流国家！",
+        "desc": "无论在历史的哪个时期，世界上都会有一个最强的国家，成为当时的世界霸主。比如亚洲的蒙古帝国，工业革命时期的日不落帝国，冷战时期的苏联等等，个个都是...",
+        "imgUrl": "//upload-images.jianshu.io/upload_images/12631447-56d6635f9027cb62.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+      },
+      {
+        "id": 3,
+        "title": "最惨的世界霸主，3000万国土仅剩50万，如今沦为欧洲二流国家！",
+        "desc": "无论在历史的哪个时期，世界上都会有一个最强的国家，成为当时的世界霸主。比如亚洲的蒙古帝国，工业革命时期的日不落帝国，冷战时期的苏联等等，个个都是...",
+        "imgUrl": "//upload-images.jianshu.io/upload_images/12631447-56d6635f9027cb62.png?imageMogr2/auto-orient/strip|imageView2/1/w/300/h/240"
+      }
+    ],
+    "recommendList": [
+      {
+        "id": 1,
+        "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-3-7123fd94750759acf7eca05b871e9d17.png"
+      },
+      {
+        "id": 2,
+        "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
+      }
+    ]
+  }
+}
