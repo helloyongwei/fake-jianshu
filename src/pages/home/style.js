@@ -110,3 +110,16 @@ border-radius: 20px;
 color: #fff;
 cursor: pointer;
 `
+
+export const BackTop = styled.span`
+display: inline-block;
+position: fixed;
+right: 100px;
+bottom: 100px;
+width: 100px;
+padding: 15px 0;
+vertical-align: center;
+text-align: center;
+border: 1px solid #ccc;
+cursor: pointer;
+`

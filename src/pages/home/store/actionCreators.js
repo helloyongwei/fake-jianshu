@@ -6,7 +6,8 @@ const changeHomeData = result =>({
   type: constants.CHANGE_HOME_DATA,
   topicList: result.topicList,
   articleList: result.articleList,
-  recommendList: result.recommendList
+  recommendList: result.recommendList,
+  showScroll: false
 })
 
 const addHomeList = (result, page)=>({
@@ -17,8 +18,7 @@ const addHomeList = (result, page)=>({
 
 export const getHomeInfo= ()=> {
   return dispatch => {
-    axios.get('api/home.json').then(res => {
-      console.log(res);
+    axios.get('/api/home.json').then(res => {
       const result = res.data.data
       const action = changeHomeData(result)
       dispatch(action)
@@ -28,10 +28,15 @@ export const getHomeInfo= ()=> {
 
 export const getMoreList = (page)=> {
   return (dispatch) => {
-    axios.get('api/homeList.json?page='+page).then(res=>{
+    axios.get('/api/homeList.json?page='+page).then(res=>{
       const result = res.data.data
       const action = addHomeList(result, page+1)
       dispatch(action)
     })
   }
 }
+
+export const toggleTopShow = (show) => ({
+    type: constants.TOGGLE_TOP_SHOW,
+    show
+  })

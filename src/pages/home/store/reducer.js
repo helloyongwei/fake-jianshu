@@ -20,6 +20,8 @@ export default (state = defaultValue, action) => {
         'articleList': state.get('articleList').concat(action.articleList),
         'articlePage': action.nextPage
       })
+    case constants.TOGGLE_TOP_SHOW:
+      return state.set('showScroll', action.show)
     default:
       return state;
   }

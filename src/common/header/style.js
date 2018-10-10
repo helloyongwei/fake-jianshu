@@ -7,7 +7,7 @@ height: 56px;
 border: 1px solid #f0f0f0;
 `
 
-export const Logo = styled.a.attrs({href: '/'})`
+export const Logo = styled.div`
 position: absolute;
 top: 0;
 left: 0;
