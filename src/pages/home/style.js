@@ -14,6 +14,7 @@ float: left;
 margin-left: 15px;
 padding-top: 30px;
 width: 625px;
+cursor: pointer;
 `
 
 export const HomeRight = styled.div`
@@ -40,6 +41,7 @@ font-size: 14px;
 color: #000;
 border: 1px solid #dcdcdc;
 border-radius: 4px;
+cursor: pointer;
 .topic-pic {
   display: block;
   float: left;
@@ -88,6 +90,7 @@ width: 280px;
 height: 50px;
 background: url(${props=>props.imgUrl});
 background-size: contain;
+cursor: pointer;
 `
 
 export const WriterWrapper = styled.div`

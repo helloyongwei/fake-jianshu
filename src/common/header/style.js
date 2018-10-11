@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 import LogoPic from '../../statics/logo.png'
 
+export const Wrapper = styled.div`
+border: 1px solid #f0f0f0;
+`
+
 export const HeaderWrapper = styled.div`
+min-width: 768px;
+max-width: 1440px;
+margin: 0 auto;
 position: relative;
 height: 56px;
-border: 1px solid #f0f0f0;
 `
 
 export const Logo = styled.div`
@@ -25,9 +31,9 @@ margin: 0 auto;
 `
 
 export const NavItem = styled.div`
-line-height: 38px;
-margin-top: 9px;
+line-height: 56px;
 padding: 0 15px;
+cursor: pointer;
 color: #333;
 &.left {
   float: left;
@@ -40,6 +46,12 @@ color: #333;
 }
 &.active {
   color: #ea6f5a;
+}
+&:hover {
+    background-color: #e7e7e7;
+}
+.iconfont {
+  cursor: pointer;
 }
 `
 
@@ -58,6 +70,7 @@ float: left;
   &.focused {
     color: #fff;
     background: #777;
+    cursor: pointer;
   }
 }
 `
@@ -158,6 +171,7 @@ padding: 0 20px;
 line-height: 38px;
 border-radius: 20px;
 border: 1px solid #ec6149;
+cursor: pointer;
 &.reg {
   color: #ea6f5a;
 }

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import Img from '../../../statics/banner.png'
 import {
   RecommendWrapper,
   RecommendItem
@@ -13,7 +14,7 @@ class Recommend extends PureComponent {
         {
           list.map((item)=>{
             return (
-              <RecommendItem key={item.get('id')} imgUrl={item.get('imgUrl')}></RecommendItem>
+              <RecommendItem key={item.get('id')} imgUrl={Img}></RecommendItem>
             )
           })
         }

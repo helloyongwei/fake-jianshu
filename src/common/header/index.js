@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 
 import {
+  Wrapper,
   HeaderWrapper,
   Logo,
   Nav,
@@ -19,6 +20,7 @@ import {
 } from './style.js'
 import { connect } from 'react-redux'
 import {actionCreators } from "./store/";
+import {actionCreators as loginActionCreators } from "../../pages/login/store";
 
 class Header extends Component {
   getListArea() {
@@ -59,45 +61,54 @@ class Header extends Component {
 
   }
   render() {
-    const { focused, list, handleInputFocus, handleInputBlur } = this.props
+    const { focused, list, handleInputFocus, handleInputBlur, login, logOut } = this.props
     return (
+      <Wrapper>
       <HeaderWrapper>
-        <Link to="/">
-          <Logo></Logo>
-        </Link>
-        <Nav>
-          <NavItem className="left active">首页</NavItem>
-          <NavItem className="left">下载App</NavItem>
-          <SearchWrapper>
-            <CSSTransition
-              timeout={200}
-              in={focused}
-              classNames="slide"
-            >
-              <NavSearch
-                className={focused ? 'focused' : ''}
-                onFocus={()=>handleInputFocus(list)}
-                onBlur={handleInputBlur}
-              ></NavSearch>
-            </CSSTransition>
-            <i
-              className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}
-            >&#xe6a3;</i>
-            {this.getListArea()}
-          </SearchWrapper>
-          <NavItem className="right">登录</NavItem>
-          <NavItem className="right">
-            <i className="iconfont">&#xe607;</i>
-          </NavItem>
-        </Nav>
-        <Addition>
-          <Button className="writting">
-            <i className="iconfont">&#xe619;</i>
-            写文章
-          </Button>
-          <Button className="reg">注册</Button>
-        </Addition>
+          <Link to="/">
+            <Logo></Logo>
+          </Link>
+          <Nav>
+            <NavItem className="left active">首页</NavItem>
+            <NavItem className="left">下载App</NavItem>
+            <SearchWrapper>
+              <CSSTransition
+                timeout={200}
+                in={focused}
+                classNames="slide"
+              >
+                <NavSearch
+                  className={focused ? 'focused' : ''}
+                  onFocus={()=>handleInputFocus(list)}
+                  onBlur={handleInputBlur}
+                ></NavSearch>
+              </CSSTransition>
+              <i
+                className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}
+              >&#xe6a3;</i>
+              {this.getListArea()}
+            </SearchWrapper>
+            {
+              login ?
+                <NavItem className="right" onClick={logOut}>退出</NavItem> :
+                <Link to="/login"><NavItem className="right">登录</NavItem></Link>
+            }
+
+            <NavItem className="right">
+              <i className="iconfont">&#xe607;</i>
+            </NavItem>
+          </Nav>
+          <Addition>
+            <Link to="/write">
+              <Button className="writting">
+                <i className="iconfont">&#xe619;</i>
+                写文章
+              </Button>
+            </Link>
+            <Button className="reg">注册</Button>
+          </Addition>
       </HeaderWrapper>
+      </Wrapper>
     )
   }
 }
@@ -108,7 +119,8 @@ const mapStateToProps = (state, ownProps) => {
     page: state.getIn(['header', 'page']),
     list: state.getIn(['header', 'list']),
     totalPage: state.getIn(['header', 'totalPage']),
-    mouseIn: state.getIn(['header', 'mouseIn'])
+    mouseIn: state.getIn(['header', 'mouseIn']),
+    login: state.getIn(['login', 'login'])
   }
 }
 
@@ -136,6 +148,10 @@ const mapDispatchToProps = (dispatch) => ({
     }
     spin.style.transform = 'rotate('+(originAngle+360)+'deg)'
     dispatch(actionCreators.changePage(((page+1)%totalPage)))
+  },
+  logOut() {
+    const action = loginActionCreators.logOut()
+    dispatch(action)
   }
 })
 
