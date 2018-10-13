@@ -13,6 +13,7 @@ cd fake-jianshu
 再运行如下命令:
 ```
 npm i 
+npm start
 ```
 根据提示打卡浏览器的地址, 默认为localhost:3000
 
